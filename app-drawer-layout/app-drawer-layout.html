@@ -185,16 +185,16 @@ Custom property                          | Description                          
           if (!this.isAttached) {
             return;
           }
-          this.drawer.opened = !this.narrow;
-          this.drawer.persistent = !this.narrow;
+          // this.drawer.opened = !this.narrow;
+          // this.drawer.persistent = !this.narrow;
           if (this.narrow) {
             this.$.contentContainer.style.marginLeft = '';
             this.$.contentContainer.style.marginRight = '';
-          } else if (this.drawer.position == 'right') {
+          } else if ('x' == 'right') {
             this.$.contentContainer.style.marginLeft = '';
-            this.$.contentContainer.style.marginRight = this.drawer.getWidth() + 'px';
+            // this.$.contentContainer.style.marginRight = this.drawer.getWidth() + 'px';
           } else {
-            this.$.contentContainer.style.marginLeft = this.drawer.getWidth() + 'px';
+            // this.$.contentContainer.style.marginLeft = this.drawer.getWidth() + 'px';
             this.$.contentContainer.style.marginRight = '';
           }
         });

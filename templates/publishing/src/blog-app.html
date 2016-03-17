@@ -105,7 +105,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app-drawer-layout:not([narrow]) .main-title-toolbar {
         width: 100%;
       }
-      
+
       .category-page {
         min-height: 100vh;
       }
@@ -156,30 +156,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-drawer-layout drawer-width="288px" responsive-width="1280px">
 
       <!-- nav panel -->
-      <app-drawer id="drawer">
-        <app-header-layout has-scrolling-region>
-
-          <app-header fixed>
-
-            <!-- top toolbar -->
-            <app-toolbar></app-toolbar>
-
-            <!-- bottom toolbar -->
-            <app-toolbar class="title-toolbar nav-title-toolbar">
-              <div class="title">ZUPERK&Uuml;LBLOG</div>
-            </app-toolbar>
-
-          </app-header>
-
-          <!-- nav menu -->
-          <iron-selector class="nav-menu" selected="{{category}}" attr-for-selected="name" on-iron-activate="_showList">
-            <template is="dom-repeat" items="{{articles}}">
-              <a name="{{item.name}}" href="#/{{item.name}}/list">{{item.title}}</a>
-            </template>
-          </iron-selector>
-
-        </app-header-layout>
-      </app-drawer>
 
       <!-- main panel -->
       <app-header-layout>
@@ -198,7 +174,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- bottom toolbar -->
           <app-toolbar class="title-toolbar main-title-toolbar">
-            <div class="title">ZUPERK&Uuml;LBLOG</div>
+            <div class="title">Goethes <i>Faust</i>: Szene für Szene</div>
           </app-toolbar>
 
         </app-header>
@@ -213,14 +189,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <!-- category page (lazy-loaded) -->
               <template is="dom-if" if="{{_equal(category, {{category.name}})}}">
                 <section class="category-page" name="{{category.name}}">
-  
+
                   <!-- 2-columns grid -->
                   <two-columns-grid column-width="396" gutter="4">
                     <template is="dom-repeat" items="{{category.items}}" as="article">
                       <a is="article-headline" href="#/{{category.name}}/detail/{{article.title}}" article="{{article}}"></a>
                     </template>
                   </two-columns-grid>
-                  
+
                 </section>
               </template>
             </template>
